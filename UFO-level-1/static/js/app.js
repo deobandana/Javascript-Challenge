@@ -5,7 +5,7 @@ var tableData = data;
 var tableUfo = d3.select("#ufo-table");
 var ufoBody = tableUfo.select("tbody");  
 
-// Iterate thtough tableData, add function ufo to call each item
+// Iterate through tableData, add function ufo to call each item
 tableData.forEach(function(ufo) {
   // create rows for each data point
   var rowUfo = ufoBody.append("tr");
@@ -47,3 +47,10 @@ function runSearch() {
     });
   });
 };
+
+var resButton=d3.select("#reset-btn");
+resButton.on("click", resetFilters);
+
+function resetFilters(){
+  location.reload();
+}
